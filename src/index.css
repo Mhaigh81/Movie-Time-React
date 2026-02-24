@@ -12,12 +12,12 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+/* body {
   max-width: 100vw;
   overflow-x: hidden;
   background-color: white;
   color: black;
-}
+} */
 
 
 li {
@@ -32,10 +32,6 @@ p {
 a {
   text-decoration: none;
 }
-
-/* a:hover {
-  text-decoration: underline;
-} */
 
 
 button {

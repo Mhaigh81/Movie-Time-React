@@ -3,7 +3,7 @@ footer{
 }
 
 .container {
-    padding: px 0;
+    padding: 50px 0;
     
 }
 
@@ -47,7 +47,7 @@ footer{
   padding: 0 8px;
 }
 
-.footer__copyright,
+.footer__copyright
 .ft-link__hover-effect {
     position: relative;
 }
@@ -56,7 +56,7 @@ footer{
     content: "";
     position: absolute;
     bottom: -3px;
-    height: 1.5px;
+    height: 1px;
     width: 0;
     right: 0;
     transition: all 400ms ease;
