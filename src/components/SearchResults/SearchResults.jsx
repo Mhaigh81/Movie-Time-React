@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
 import overlayBackground from '../../assets/unsplash3.jpg' 
 import './SearchResults.css'
+import { Link } from 'react-router-dom'
 
     const SearchResults = () => {
 
@@ -17,7 +18,7 @@ import './SearchResults.css'
       useEffect(() => { 
         setTimeout(() => {
           getMovies();
-        }, 2000)
+        }, 500)
       }, [])
 
     
@@ -39,8 +40,8 @@ import './SearchResults.css'
                       <h2 className="movie__title">{movie.Title}</h2>
                       <h4 className="movie__year">{movie.Year}</h4>
                   
-                      
-                      <button className="movie__btn">Learn More</button>
+                      <Link to={`https://www.omdbapi.com/?i=${movie.imdbID}&apikey=900cdde7`}>
+                        <button className="movie__btn">Learn More</button> </Link>
                   </div>
               )
           })}    

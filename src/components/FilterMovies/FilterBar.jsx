@@ -1,7 +1,11 @@
 import React from 'react'
-import './FilterMovies.css'
+import './FilterBar.css'
 
-const FilterMovies = () => {
+const FilterBar = () => {
+
+    
+
+
   return (
     <div className="filter-container">
             <div className="filter-row">
@@ -10,8 +14,8 @@ const FilterMovies = () => {
                     <h1 className="search-info">Search results for </h1>
                     <h1 className="searchName"></h1>
                     </div>
-                    <select id="filter" defaultValue="DEFAULT" onChange={(event) => filterMoives(event.target.value)}>
-                        <option value="DEFAULT" disabled selected>Sort</option>
+                    <select id="filter" defaultValue="DEFAULT" onChange={(event) => FilterMoives(event.target.value)}>
+                        <option value="DEFAULT" disabled>Sort</option>
                         <option value="newest">Newest to Oldest</option>
                         <option value="oldest">Oldest to Newest</option>
                     </select>
@@ -27,4 +31,4 @@ const FilterMovies = () => {
   )
 }
 
-export default FilterMovies
+export default FilterBar

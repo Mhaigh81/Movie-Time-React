@@ -7,7 +7,7 @@ import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
 
 import MovieSearch from '../../components/MovieSearch/MovieSearch.jsx'
 import SearchResults from '../../components/SearchResults/SearchResults.jsx'
-import FilterMovies from '../../components/FilterMovies/FilterMovies.jsx'
+import FilterMovies from '../../components/FilterMovies/FilterBar.jsx'
 
 const FindMovies = () => {
   return (
