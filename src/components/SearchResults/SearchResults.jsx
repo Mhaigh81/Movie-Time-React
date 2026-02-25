@@ -1,32 +1,54 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
+import overlayBackground from '../../assets/unsplash3.jpg' 
 import './SearchResults.css'
 
-const SearchResults = () => {
-  return (
-    <div className='searchresults'>
-        <div className="results-container">
-            <div className="results-row">
-                <div className="filter-bar">
-                    <div className="search">
-                    <h1 className="search-info">Search results for </h1>
-                    <h1 className="searchName"></h1>
-                    </div>
-                    <select id="filter" defaultValue="DEFAULT" onChange={(event) => filterBooks(event.target.value)}>
-                        <option value="DEFAULT" disabled selected>Sort</option>
-                        <option value="newest">Newest to Oldest</option>
-                        <option value="oldest">Oldest to Newest</option>
-                    </select>
-                </div>
-                
-                <div className="movies movies__loading">
-                        <i className="fa-solid fa-spinner books__loading--spinner"></i>
-                </div>
-                
-                
-            </div>
-        </div>
-    </div>
-  )
-}
+    const SearchResults = () => {
 
-export default SearchResults
+      const [movies, setMovies] = useState([])    
+      
+      async function getMovies() {
+        const {data} = await axios.get("https://www.omdbapi.com/?s=$batman&apikey=900cdde7")
+        setMovies(data.Search)
+        
+      }
+      useEffect(() => { 
+        setTimeout(() => {
+          getMovies();
+        }, 2000)
+      }, [])
+
+    
+      
+      
+      return(
+        
+      <div className="results-container">
+        <div className="results-row">
+          <div className='movies'>
+          {movies
+          .slice(0,6)
+          .map((movie) => {
+              return (
+                  <div className="movie__card">
+                      <figure>
+                          <img className="movie__img" src={movie.Poster} ></img>
+                      </figure>
+                      <h2 className="movie__title">{movie.Title}</h2>
+                      <h4 className="movie__year">{movie.Year}</h4>
+                  
+                      
+                      <button className="movie__btn">Learn More</button>
+                  </div>
+              )
+          })}    
+          </div>  
+        </div>
+      </div>   
+      )  
+      
+         
+    }
+export default SearchResults;

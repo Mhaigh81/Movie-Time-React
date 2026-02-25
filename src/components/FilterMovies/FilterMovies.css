@@ -1,0 +1,47 @@
+.filter-container {
+    padding: 24px 0;
+    width: 100%;
+    background-color: lightgray;
+    height: 100%;
+}
+
+.filter-row {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.filter-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.search{
+    display: flex;
+    align-items: baseline;
+}
+
+.search-info{
+    margin-right: 10px;
+}
+
+.searchName{
+    color: purple;
+    text-transform: uppercase;
+}
+
+select {
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #dcdfe6;
+    color: #0a1f44;
+    height: 40px;
+    line-height: 40px;
+    outline: none;
+    padding: 0 16px;
+    width: 100%;
+    max-width: 200px;
+}

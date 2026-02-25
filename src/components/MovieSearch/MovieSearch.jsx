@@ -21,7 +21,11 @@ const MovieSearch = () => {
             </div>
           
           <div className="overlay"></div>
+        
+        
+        
         </div>
+    
   )
 }
 
