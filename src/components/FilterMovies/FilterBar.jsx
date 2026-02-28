@@ -21,9 +21,9 @@ const FilterBar = () => {
                     </select>
                 </div>
                 
-                <div className="movies movies__loading">
+                {/* <div className="movies movies__loading">
                         <i className="fa-solid fa-spinner books__loading--spinner"></i>
-                </div>
+                </div> */}
                 
                 
             </div>

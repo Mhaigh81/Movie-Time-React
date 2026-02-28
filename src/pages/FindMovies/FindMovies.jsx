@@ -13,11 +13,11 @@ const FindMovies = () => {
   return (
     <div className='findMovies'>
         
-        <Navbar />
+        
         <MovieSearch />
-        <FilterMovies />
-        <SearchResults />
-        <Footer />
+       
+        {/* <SearchResults /> */}
+        
     </div>
   )
 }
