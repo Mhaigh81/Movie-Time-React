@@ -10,6 +10,7 @@ import MovieCard from '../Ui/MovieCard'
 import FilterMovies from '../../components/FilterMovies/FilterBar.jsx'
 import { useSearchParams } from 'react-router-dom'
 import SearchResults from '../SearchResults/SearchResults.jsx'
+import FilterBar from '../../components/FilterMovies/FilterBar.jsx'
 
 
 const MovieSearch = () => {
@@ -59,7 +60,7 @@ const MovieSearch = () => {
           
           <div className="overlay"></div>
         </div>
-        <FilterMovies term={searchTerm}/>
+        <FilterBar term={searchTerm}/>
         <SearchResults movie={movies} />
         
         
