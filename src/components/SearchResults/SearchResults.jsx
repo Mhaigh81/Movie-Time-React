@@ -5,9 +5,7 @@
 
      const SearchResults = ({ movies}) => {
       
-        function checkMovies(movies) {
-        if (!movies) return
-        }
+        
       
        
        return(
@@ -15,8 +13,7 @@
        <div className="results-container">
          <div className="results-row">
            <div className='movies'>
-           {movies
-           .slice(0,6)
+           {(movies || []).slice(0,6)
            .map((movie) => {
             
                return (
