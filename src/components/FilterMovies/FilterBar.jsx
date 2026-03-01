@@ -13,7 +13,7 @@ const FilterBar = ({ term, movies, setMovies }) => {
         return parts[parts.length - 1];
     };
 
-    function filterBooks(filter) {
+    function filterMovies(filter) {
         if (filter === "newest"){
             setMovies(movies.slice().sort((a,b) =>  getYear(b) - getYear(a)))
         }
@@ -32,7 +32,7 @@ const FilterBar = ({ term, movies, setMovies }) => {
                     <h1 className="searchName"></h1>
                     </div>
                     <select id="filter" defaultValue="DEFAULT" onChange={(event) =>    
-                        FilterMoives(event.target.value)}>
+                        filterMoives(event.target.value)}>
                         <option value="DEFAULT" disabled>Sort</option>
                         <option value="newest">Newest to Oldest</option>
                         <option value="oldest">Oldest to Newest</option>
