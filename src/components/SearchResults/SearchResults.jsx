@@ -14,10 +14,10 @@
          <div className="results-row">
            <div className='movies'>
            {(movies || []).slice(0,6)
-           .map((movie) => {
+           .map((movie, index) => {
             
                return (
-                   <MovieCard movie={movie} key={movie.imdbID}/>
+                   <MovieCard movie={movie} key={movie.imdbID + index}/>
                )
            })}    
            </div>  

@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 const FilterBar = ({ term, movies, setMovies }) => {
+
+    
     
     const getYear = (movie) => {
     const parts = movie.Year.split(/[-–]/)
@@ -13,7 +15,8 @@ const FilterBar = ({ term, movies, setMovies }) => {
         return parts[parts.length - 1];
     };
 
-    function filterMovies(filter) {
+    function filterMoives(filter) {
+        console.log(filter)
         if (filter === "newest"){
             setMovies(movies.slice().sort((a,b) =>  getYear(b) - getYear(a)))
         }
