@@ -16,7 +16,7 @@ import FilterBar from '../../components/FilterMovies/FilterBar.jsx'
 const MovieSearch = () => {
 
   const [movies, setMovies] = useState([]) 
-  const [searchTerm, setSearchTerm] = useState()  
+  const [searchTerm, setSearchTerm] = useState("")  
   const [searchParams] = useSearchParams()
 
   const searchValue = searchParams.get("search")
