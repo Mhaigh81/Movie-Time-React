@@ -4,7 +4,28 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const FilterBar = ({ term }) => {
 
-    
+    function FilterMovies(event){
+    const sortOption = event.target.value
+
+    let sortedMovies = [...currentMovies]
+
+    const getYear = (movie) => {
+    const parts = movie.Year.split(/[-–]/)
+        .map(p => p.trim())
+        .filter(p => p !== "")
+        .map(Number);
+    return parts[parts.length - 1];
+    };
+
+    if (sortOption === "newest"){
+        sortedMovies.sort((a, b) => getYear(b) - getYear(a))
+    }
+    else if (sortOption === "oldest"){
+        sortedMovies.sort((a, b) => getYear(a) - getYear(b))
+    }
+
+    displayMovies(sortedMovies)
+}
 
 
   return (
