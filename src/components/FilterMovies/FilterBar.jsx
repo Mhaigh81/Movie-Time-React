@@ -2,33 +2,27 @@ import React, { useState } from 'react'
 import './FilterBar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const FilterBar = ({ term, movies: initialMovies }) => {
-    const [movies, setMovies] = useState(initialMovies)
 
-    function FilterMovies(event){
-    const sortOption = event.target.value
-
-    let sortedMovies = [...currentMovies]
-
+const FilterBar = ({ term, movies, setMovies }) => {
+    
     const getYear = (movie) => {
     const parts = movie.Year.split(/[-–]/)
         .map(p => p.trim())
         .filter(p => p !== "")
         .map(Number);
-    return parts[parts.length - 1];
+        return parts[parts.length - 1];
     };
 
-    if (sortOption === "newest"){
-        sortedMovies.sort((a, b) => getYear(b) - getYear(a))
+    function filterBooks(filter) {
+        if (filter === "newest"){
+            setMovies(movies.slice().sort((a,b) =>  getYear(b) - getYear(a)))
+        }
+        else if (filter === "oldest"){
+             setMovies(movies.slice().sort((a,b) =>  getYear(a) - getYear(b)))
+            
+        }
     }
-    else if (sortOption === "oldest"){
-        sortedMovies.sort((a, b) => getYear(a) - getYear(b))
-    }
-
     
-}
-
-
   return (
     <div className="filter-container">
             <div className="filter-row">

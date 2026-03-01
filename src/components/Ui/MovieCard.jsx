@@ -3,15 +3,12 @@ import { Link } from "react-router-dom";
 import noimage from '../../assets/no-image.png'
 
 const MovieCard = ({ movie }) => {
-  const handleError = () => {
-    setError(true)
-    setImgSrc={noimage}
-  }
+  
   
   return (
     <div className="movie__card">
       <figure>
-        <img className="movie__img" src={movie.Poster} onError={handleError}></img>
+        <img className="movie__img" src={movie.Poster} onError={(e) => e.target.src=noimage}></img>
       </figure>
       <h2 className="movie__title">{movie.Title}</h2>
       <h4 className="movie__year">{movie.Year}</h4>
