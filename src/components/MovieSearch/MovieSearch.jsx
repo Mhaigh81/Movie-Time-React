@@ -48,7 +48,7 @@ const MovieSearch = () => {
                 <div className="search__wrapper">
                   <input className='search__input' type="text" placeholder='Search for your movie titles here:' 
                   value={searchTerm}
-                  onChange={(event) => getMovies(event.target.value)} 
+                  onChange={(event) => setSearchTerm(event.target.value)} 
                   />
                   <button className="search__btn">
                     <FontAwesomeIcon icon={faMagnifyingGlass} className='search-fa-solid' onClick={() => getMovies(searchTerm)} />
@@ -59,7 +59,7 @@ const MovieSearch = () => {
           
           <div className="overlay"></div>
         </div>
-        <FilterMovies />
+        <FilterMovies term={searchTerm}/>
         <SearchResults movies={movies} />
       
         

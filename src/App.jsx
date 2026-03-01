@@ -7,10 +7,10 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faBars, faMagnifyingGlass, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faMagnifyingGlass, faTimes, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 
-library.add(faBars,faMagnifyingGlass, faTimes)
+library.add(faBars,faMagnifyingGlass, faTimes, faSpinner)
 
 
 function App() {

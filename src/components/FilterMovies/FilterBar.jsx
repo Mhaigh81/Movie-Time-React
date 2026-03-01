@@ -24,7 +24,7 @@ const FilterBar = ({ term }) => {
         sortedMovies.sort((a, b) => getYear(a) - getYear(b))
     }
 
-    displayMovies(sortedMovies)
+    
 }
 
 
