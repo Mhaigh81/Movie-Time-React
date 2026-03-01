@@ -4,7 +4,11 @@
  import MovieCard from '../Ui/MovieCard'
 
      const SearchResults = ({ movies}) => {
-
+      
+        function checkMovies(movies) {
+        if (!movies) setMovies = []
+        }
+      
        
        return(
         <>
