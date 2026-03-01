@@ -8,26 +8,35 @@ import './MovieSearch.css'
 import '../SearchResults/SearchResults.css'
 import MovieCard from '../Ui/MovieCard'
 import FilterMovies from '../../components/FilterMovies/FilterBar.jsx'
+import { useSearchParams } from 'react-router-dom'
+import SearchResults from '../SearchResults/SearchResults.jsx'
 
 
 const MovieSearch = () => {
 
   const [movies, setMovies] = useState([]) 
-  const [searchTerm, setSearchTerm] = useState("batman")   
+  const [searchTerm, setSearchTerm] = useState()  
+  const [searchParams] = useSearchParams()
+
+  const searchValue = searchParams.get("search")
       
-      async function getMovies(searchTerm) {
-        console.log(searchTerm)
-        const {data} = await axios.get(`https://www.omdbapi.com/?s=$fast&apikey=900cdde7`)
-        setMovies(data.Search)
-       
-        
+      async function getMovies(term) {
+        if (!term) return
+        try{
+          const {data} = await axios.get(`https://www.omdbapi.com/?s=${term}&apikey=900cdde7`)
+        setMovies(data.Search || [])
+        } catch(error) {
+          console.error("Error fetching movies:", error);
+          setMovies([]);
+        }
       }
-      useEffect(() => { 
-        setTimeout(() => {
-          getMovies();
-          
-        }, 2000)
-      }, [])
+
+      useEffect(() => {
+        if (searchValue) {
+          setSearchTerm(searchValue);
+          getMovies(searchValue);
+        }
+      }, [searchValue]);
 
   
   return (
@@ -38,10 +47,11 @@ const MovieSearch = () => {
               <div className="search">
                 <div className="search__wrapper">
                   <input className='search__input' type="text" placeholder='Search for your movie titles here:' 
+                  value={searchTerm}
                   onChange={(event) => getMovies(event.target.value)} 
                   />
                   <button className="search__btn">
-                    <FontAwesomeIcon icon={faMagnifyingGlass} className='search-fa-solid' />
+                    <FontAwesomeIcon icon={faMagnifyingGlass} className='search-fa-solid' onClick={() => getMovies(searchTerm)} />
                   </button>
                 </div>
               </div>
@@ -50,21 +60,9 @@ const MovieSearch = () => {
           <div className="overlay"></div>
         </div>
         <FilterMovies />
-        <div className="results-container">
-          <div className="results-row">
-            <div className='movies'>
-            {movies
-            .slice(0,6)
-            .map((movie) => {
-              
-                return (
-                    <MovieCard movie={movie} key={movie.imdbID}/>
-                )
-            })}    
-            </div>  
-          </div>
-        </div>   
-      )  
+        <SearchResults movies={movies} />
+      
+        
   </>      
         
     

@@ -3,7 +3,7 @@
  import './SearchResults.css'
  import MovieCard from '../Ui/MovieCard'
 
-     const SearchResults = () => {
+     const SearchResults = ({ movies}) => {
 
        
        return(
