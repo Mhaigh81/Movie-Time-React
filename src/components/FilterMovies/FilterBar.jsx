@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './FilterBar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const FilterBar = ({ term }) => {
+const FilterBar = ({ term, movies: initialMovies }) => {
+    const [movies, setMovies] = useState(initialMovies)
 
     function FilterMovies(event){
     const sortOption = event.target.value
@@ -24,7 +25,7 @@ const FilterBar = ({ term }) => {
         sortedMovies.sort((a, b) => getYear(a) - getYear(b))
     }
 
-    displayMovies(sortedMovies)
+    
 }
 
 

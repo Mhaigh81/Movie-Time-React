@@ -60,7 +60,7 @@ const MovieSearch = () => {
           
           <div className="overlay"></div>
         </div>
-        <FilterBar term={searchTerm}/>
+        {/* <FilterBar term={term} movies={movies}/> */}
         <SearchResults movie={movies} />
         
         
