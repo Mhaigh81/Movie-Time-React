@@ -6,7 +6,7 @@
      const SearchResults = ({ movies}) => {
       
         function checkMovies(movies) {
-        if (!movies) setMovies = []
+        if (!movies) return
         }
       
        
