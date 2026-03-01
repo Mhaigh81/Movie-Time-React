@@ -4,7 +4,8 @@ import noimage from '../../assets/no-image.png'
 
 const MovieCard = ({ movie }) => {
   const handleError = () => {
-    
+    setError(true)
+    setImgSrc={noimage}
   }
   
   return (

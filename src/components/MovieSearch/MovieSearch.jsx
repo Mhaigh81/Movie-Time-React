@@ -59,9 +59,9 @@ const MovieSearch = () => {
           
           <div className="overlay"></div>
         </div>
-        <FilterMovies term={searchTerm}/>
-        <SearchResults movies={movies} />
-      
+        <FilterMovies />
+        <SearchResults movie={movies} />
+        
         
   </>      
         
