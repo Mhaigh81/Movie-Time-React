@@ -22,12 +22,12 @@ const Navbar = () => {
         </Link>
         <ul className="nav__link--list">
           <li>
-            <Link to="/" className="nav__link link__hover-effect">
+            <Link to="/" className="nav__link link__hover--effect">
               Home
            </Link>
           </li>
           <li>
-            <Link to="/findmovies" className="nav__link link__hover-effect">
+            <Link to="/findmovies" className="nav__link link__hover--effect">
               Find Your Movie
             </Link>
           </li>

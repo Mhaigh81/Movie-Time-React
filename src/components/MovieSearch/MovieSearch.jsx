@@ -42,9 +42,9 @@ const MovieSearch = () => {
   
   return (
     <>
-    <div className="search-container">
+    <div className="search__container">
             <div className="row">
-              <h1 className="find-title">Find Your Movie</h1>
+              <h1 className="find__title">Find Your Movie</h1>
               <div className="search">
                 <div className="search__wrapper">
                   <input className='search__input' type="text" placeholder='Search for your movie titles here:' 

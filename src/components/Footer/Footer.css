@@ -42,17 +42,15 @@ footer{
 }
 
 
-
 .footer__link {
   padding: 0 8px;
 }
 
-.footer__copyright
-.ft-link__hover-effect {
+.footer__link__hover--effect {
     position: relative;
 }
 
-.ft-link__hover-effect:after{
+.footer__link--hover--effect:after{
     content: "";
     position: absolute;
     bottom: -3px;
@@ -63,7 +61,7 @@ footer{
     background-color: white;
 }
 
-.ft-link__hover-effect:hover:after{
+.footer__link--hover--effect:hover:after{
     left: 0;
     width: 100%;
 }

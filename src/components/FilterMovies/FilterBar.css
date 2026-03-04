@@ -1,18 +1,18 @@
-.filter-container {
+.filter__container {
     padding: 24px 0;
     width: 100%;
     background-color: lightgray;
     height: 100%;
 }
 
-.filter-row {
+.filter__row {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
 }
 
-.filter-bar{
+.filter__bar{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,7 +24,7 @@
     align-items: baseline;
 }
 
-.search-info{
+.search__info{
     margin-right: 10px;
 }
 

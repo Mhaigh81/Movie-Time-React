@@ -5,26 +5,24 @@
 
      const SearchResults = ({ movies}) => {
       
-        
-      
        
        return(
         <>
-       <div className="results-container">
-         <div className="results-row">
-           <div className='movies'>
-           {(movies || []).slice(0,6)
-           .map((movie, index) => {
-            
-               return (
-                   <MovieCard movie={movie} key={movie.imdbID + index}/>
-               )
-           })}    
-           </div>  
-         </div>
-       </div>  </> 
+        <div className="results__container">
+          <div className="results__row">
+            <div className='movies'>
+            {(movies || []).slice(0,6)
+            .map((movie, index) => {
+              
+                return (
+                    <MovieCard movie={movie} key={movie.imdbID + index}/>
+                )
+            })}    
+            </div>  
+          </div>
+        </div>  
+       </> 
       )  
       
-         
     }
  export default SearchResults;

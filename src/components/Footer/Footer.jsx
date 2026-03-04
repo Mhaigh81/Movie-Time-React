@@ -15,10 +15,10 @@ const Footer = () => {
                     </figure>
                 </Link>
                 <div className="footer__list">
-                    <Link to="/" className="footer__link ft-link__hover-effect">Home</Link>
-                    <span className="footer__link ft-link__hover-effect no-cursor">About</span>
-                    <Link to="/findmovies" className="footer__link ft-link__hover-effect">Find Movies</Link>
-                    <Link to="/" className="footer__link ft-link__hover-effect no-cursor">Contact</Link>
+                    <Link to="/" className="footer__link footer__link--hover--effect">Home</Link>
+                    <span className="footer__link no-cursor">About</span>
+                    <Link to="/findmovies" className="footer__link footer__link--hover--effect">Find Movies</Link>
+                    <Link to="/" className="footer__link no-cursor">Contact</Link>
                 </div>
                 <div className="footer__copyright">Copyright © 2026 Mike Haigh</div>
                 <figure className="personal__logo">

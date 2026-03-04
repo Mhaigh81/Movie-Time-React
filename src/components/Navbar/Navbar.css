@@ -43,11 +43,11 @@ nav {
 }
 
 
-.link__hover-effect{
+.link__hover--effect{
     position: relative;
 }
 
-.link__hover-effect:after{
+.link__hover--effect:after{
     content: "";
     position: absolute;
     bottom: -3px;
@@ -55,10 +55,10 @@ nav {
     width: 0;
     right: 0;
     transition: all 400ms ease;
-    background-color: #6030b1;!important
+    background-color: #6030b1;
 }
 
-.link__hover-effect:hover:after{
+.link__hover--effect:hover:after{
     left: 0;
     width: 100%;
 }

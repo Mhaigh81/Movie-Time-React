@@ -27,11 +27,11 @@ const FilterBar = ({ term, movies, setMovies }) => {
     }
     
   return (
-    <div className="filter-container">
-            <div className="filter-row">
-                <div className="filter-bar">
+    <div className="filter__container">
+            <div className="filter__row">
+                <div className="filter__bar">
                     <div className="search">
-                    <h1 className="search-info">Search results for {term}</h1>
+                    <h1 className="search__info">Search results for <span className="purple">{term}</span></h1>
                     <h1 className="searchName"></h1>
                     </div>
                     <select id="filter" defaultValue="DEFAULT" onChange={(event) =>    
