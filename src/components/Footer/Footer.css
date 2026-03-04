@@ -48,6 +48,7 @@ footer{
 
 .footer__link--hover--effect {
     position: relative;
+    display: flex;
 }
 
 .footer__link--hover--effect:after{

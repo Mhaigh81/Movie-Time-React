@@ -45,6 +45,7 @@ nav {
 
 .link__hover--effect{
     position: relative;
+    display: flex;
 }
 
 .link__hover--effect:after{
