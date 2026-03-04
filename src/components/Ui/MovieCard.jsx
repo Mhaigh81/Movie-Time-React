@@ -8,7 +8,8 @@ const MovieCard = ({ movie }) => {
   return (
     <div className="movie__card">
       <figure>
-        <img className="movie__img" src={movie.Poster} onError={(e) => e.target.src=noimage}></img>
+        <Link to={`https://www.omdbapi.com/?i=${movie.imdbID}&apikey=900cdde7`}>
+        <img className="movie__img" src={movie.Poster} onError={(e) => e.target.src=noimage}></img></Link>
       </figure>
       <h2 className="movie__title">{movie.Title}</h2>
       <h4 className="movie__year">{movie.Year}</h4>

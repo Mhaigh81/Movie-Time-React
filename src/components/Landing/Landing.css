@@ -69,3 +69,8 @@
     width: 100%;
     margin: 120px 10px;
 }
+
+.search__term {
+    color: #6030b1;
+    text-transform: uppercase;
+}

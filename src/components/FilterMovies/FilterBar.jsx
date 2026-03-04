@@ -31,7 +31,7 @@ const FilterBar = ({ term, movies, setMovies }) => {
             <div className="filter__row">
                 <div className="filter__bar">
                     <div className="search">
-                    <h1 className="search__info">Search results for <span className="purple">{term}</span></h1>
+                    <h1 className="search__info">Search results for <span className="search__term">{term}</span></h1>
                     <h1 className="searchName"></h1>
                     </div>
                     <select id="filter" defaultValue="DEFAULT" onChange={(event) =>    
