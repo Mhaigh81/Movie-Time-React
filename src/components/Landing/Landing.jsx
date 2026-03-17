@@ -20,7 +20,7 @@ const Landing = () => {
                 <h2 className="sub-title">FIND YOUR FAVORITES WITH <span className='purple'>MOVIETIME</span></h2>
                 <div className="landing-search">
                     <div className="landing-search__wrapper">
-                        <input className="landing-search__input" type="none" placeholder='Click the magnifying glass to begin' 
+                        <input className="landing-search__input" type="text" placeholder='Search for your movie titles here:' 
                         value={term} 
                         onChange={(e) => setTerm(e.target.value)
                         }/>

@@ -26,6 +26,7 @@ const MovieSearch = () => {
         try{
           const {data} = await axios.get(`https://www.omdbapi.com/?s=${term}&apikey=900cdde7`)
         setMovies(data.Search || [])
+        console.log(data)
         } catch(error) {
           console.error("Error fetching movies:", error);
           setMovies([]);

@@ -32,7 +32,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/" className="nav__link nav__link--primary">
+            <Link to="/" className="nav__link nav__link--primary no-cursor">
               Contact
             </Link>
           </li>
