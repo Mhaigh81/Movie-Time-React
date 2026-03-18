@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faBars, faMagnifyingGlass, faTimes, faSpinner, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import MoviesInfo from './pages/MoviesInfo/MoviesInfo';
+import MoviesCard from './components/Ui/MovieCard'
 
 
 
@@ -23,7 +24,7 @@ function App() {
         <Routes>      
           <Route path="/" element={<Home />} />
           <Route path="/FindMovies" element={<FindMovies />} />
-          {/* <Route path="/FindMovies/:id" element={<MoviesInfo movies={movies} />} /> */}
+          <Route path="/FindMovies/:id" element={<MoviesInfo />} />
         </Routes>   
       <Footer /> 
     </div>

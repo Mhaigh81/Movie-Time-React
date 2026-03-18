@@ -24,7 +24,7 @@ const MovieCard = ({ movie }) => {
       {img ? (
         <>
           
-          <Link to={`https://www.omdbapi.com/?i=${movie.imdbID}&apikey=900cdde7`}>
+          <Link to={`/FindMovies/${movie.imdbID}`}>
             <figure>
             <img className="movie__img" src={movie.Poster} onError={(e) => e.target.src=noimage}></img>
           </figure>
