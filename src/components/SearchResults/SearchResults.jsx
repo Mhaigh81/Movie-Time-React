@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
  import MovieCard from '../Ui/MovieCard'
 
      const SearchResults = ({ movies}) => {
-      
+      console.log(movies)
        
        return(
         <>

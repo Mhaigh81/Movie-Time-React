@@ -7,10 +7,12 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faBars, faMagnifyingGlass, faTimes, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faMagnifyingGlass, faTimes, faSpinner, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import MoviesInfo from './pages/MoviesInfo/MoviesInfo';
 
 
-library.add(faBars,faMagnifyingGlass, faTimes, faSpinner)
+
+library.add(faBars,faMagnifyingGlass, faTimes, faSpinner, faArrowLeft )
 
 
 function App() {
@@ -21,7 +23,7 @@ function App() {
         <Routes>      
           <Route path="/" element={<Home />} />
           <Route path="/FindMovies" element={<FindMovies />} />
-          
+          {/* <Route path="/FindMovies/:id" element={<MoviesInfo movies={movies} />} /> */}
         </Routes>   
       <Footer /> 
     </div>
