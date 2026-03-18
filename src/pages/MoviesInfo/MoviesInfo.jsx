@@ -65,9 +65,9 @@ const MoviesInfo = () => {
               </figure>
               <div className="movie__selected__description">
                 <h2 className="movie__selected__title">
-                  {movie.title}
+                  {movie.Title}
                 </h2>
-                {movie.year}
+                {movie.Year}
               </div>
             </div>
           </div>
