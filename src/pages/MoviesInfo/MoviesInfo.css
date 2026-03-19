@@ -1,20 +1,23 @@
 #movies__body {
-  background-color: rgba(115, 66, 214, 0.1);
+  background-color: lightgray;
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-.movies__main {
+/* .movies__main {
   flex: 1;
   background-color: rgb(248,249,250);
-}
+} */
 
 .movies__container {
     padding: 80px 0;
 }
 
-
+.movies--row {
+    max-width: 1100px;
+    margin: 0 auto;
+}
 
 .movies__header--title {
   margin-bottom: 0;
@@ -22,7 +25,7 @@
 
 .movie__selected--top {
   padding: 0 24px;
-  margin-bottom: 8px;
+  margin-bottom: 36px;
   font-size: 32px;
   color: #242424;
   display: flex;
@@ -31,5 +34,87 @@
 
 .movie__selected__title {
     font-size: 14px;
-    color: black;
+    
+}
+
+.movie__selected {
+    display: flex;
+}
+
+.movie__selected--figure {
+  width: 40%;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie__selected--img {
+    max-height: 600px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.movie__selected--description {
+  width: 60%;
+  padding: 16px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* color: white; */
+}
+
+.movie__selected__title {
+    font-size: 32px;
+    font-weight: bold;
+    padding-bottom: 16px;
+}
+
+.movie__selected__plot{
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.bold {
+    font-weight: bold;
+}
+.movie__selected--year,
+.movie__selected--rating,
+.movie__selected--actors,
+.movie__selected--genere,
+.movie__selected--type {
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 14px;
+    line-height: 1.25;
+}
+.movie__selected--actors {
+   line-height: 1.5;
+}
+
+.movie__selected--type {
+    text-transform: capitalize;
+}
+
+.movie__reviews {
+    width: 100%;
+    margin-top: 8px;
+}
+.movie__ratings {
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4px;
+}
+
+.movie__rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33%;
+    margin-top: 4px;
+}
+
+.movie__rating--value {
+    font-weight: 100;
 }

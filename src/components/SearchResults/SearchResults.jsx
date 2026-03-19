@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
  import axios from 'axios'
  import './SearchResults.css'
  import MovieCard from '../Ui/MovieCard'
 
      const SearchResults = ({ movies}) => {
-      console.log(movies)
        
        return(
         <>

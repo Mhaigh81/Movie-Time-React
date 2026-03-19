@@ -4,6 +4,7 @@ import { data, Link, useParams } from 'react-router-dom'
 import MovieCard from '../../components/Ui/MovieCard';
 import axios from 'axios';
 import '../MoviesInfo/MoviesInfo.css'
+import Ratings from '../../components/Ui/RatingsList';
  
 const MoviesInfo = () => {
 
@@ -34,45 +35,61 @@ const MoviesInfo = () => {
     if (!movie) {
         return <div>No movie found.</div>; // Handle case where no movie is returned
     }
-    console.log(movie)
+   
 
-// return (
-//         <div>
-//             <h1>{movie.Title}</h1>
-//             <p>Year: {movie.Year}</p>
-//             <p>Genre: {movie.Genre}</p>
-//             <p>Plot: {movie.Plot}</p>
-//             <img src={movie.Poster} alt={movie.Title} />
-//             <Link to={`https://www.omdbapi.com/?i=${movie.imdbID}&apikey=900cdde7`} target="_blank" rel="noopener noreferrer">
-//                 <button className="movie__btn">Learn More</button>
-//             </Link>
-//         </div>
-//     );
+
 
   return (
     <div id="movies__body">
-      <main className="movies__main">
+     
         <div className="movies__container">
-          <div className="row">
+          <div className="movies--row">
             <div className="movie__selected--top">
               <Link to="/findmovies" className='movie__link'>
-                <FontAwesomeIcon icon="arrow-left" />
+                <FontAwesomeIcon icon="arrow-left" />  Back To Search Results
               </Link>
             </div>
             <div className="movie__selected">
               <figure className="movie__selected--figure">
                   <img src={movie.Poster} alt="" className='movie__selected--img' />
               </figure>
-              <div className="movie__selected__description">
+              <div className="movie__selected--description">
                 <h2 className="movie__selected__title">
                   {movie.Title}
                 </h2>
-                {movie.Year}
+                <p className="movie__selected__plot">{movie.Plot}</p> 
+                <h3 className="movie__selected--actors">
+                  <span className="bold">Staring:</span> <br />  
+                  {movie.Actors}</h3>
+                <h3 className="movie__selected--genere">
+                  <span className="bold">Genere: </span>  
+                  {movie.Genre}</h3>
+                <h3 className="movie__selected--year">
+                  <span className="bold">Release Date: </span>  
+                    {movie.Year}</h3>
+                <h3 className="movie__selected--type">
+                  <span className="bold">Type: </span>  
+                    {movie.Type}</h3>
+                <h3 className="movie__selected--rating">
+                  <span className="bold">Rating:  </span>
+                    {movie.Rated}</h3>
+                <h3 className="movie__selected--rating">
+                  <span className="bold">Runtime: </span> {movie.Runtime}</h3>
+               
+                  <div className="movie__reviews">
+                    <span className="bold">Reviews:</span>
+                    <Ratings ratings={movie.Ratings} />
+                    {/* {movie.Ratings[0].Source}: {movie.Ratings[0].Value}<br /> */}
+                    {/* {movie.Ratings[1].Source}: {movie.Ratings[1].Value}<br />
+                    {movie.Ratings[2].Source}: {movie.Ratings[2].Value}<br /> */}
+                  </div>
+                </div>
+                
               </div>
             </div>
           </div>
-        </div>
-      </main>
+        
+     
     </div>
   )
 }

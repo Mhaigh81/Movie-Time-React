@@ -24,7 +24,7 @@ const MovieCard = ({ movie }) => {
       {img ? (
         <>
           
-          <Link to={`/FindMovies/${movie.imdbID}`}>
+          <Link to={`/FindMovies/${movie.imdbID}`} target="_blank">
             <figure>
             <img className="movie__img" src={movie.Poster} onError={(e) => e.target.src=noimage}></img>
           </figure>
