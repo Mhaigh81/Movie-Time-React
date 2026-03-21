@@ -1,7 +1,7 @@
 import React from 'react'
 
 const RatingsList = ({ ratings }) => {
-  console.log(ratings)
+  
   return (
    
     <div className='movie__ratings'>

@@ -16,7 +16,7 @@ const FilterBar = ({ term, movies, setMovies }) => {
     };
 
     function filterMoives(filter) {
-        console.log(filter)
+       
         if (filter === "newest"){
             setMovies(movies.slice().sort((a,b) =>  getYear(b) - getYear(a)))
         }

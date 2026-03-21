@@ -5,6 +5,7 @@ import MovieCard from '../../components/Ui/MovieCard';
 import axios from 'axios';
 import '../MoviesInfo/MoviesInfo.css'
 import Ratings from '../../components/Ui/RatingsList';
+import noimage from '../../assets/no-image.png'
  
 const MoviesInfo = () => {
 
@@ -16,6 +17,7 @@ const MoviesInfo = () => {
         const fetchMovie = async () => {
             setLoading(true);
             try {
+                await new Promise(resolve => setTimeout(resolve, 2000));
                 const {data} = await axios.get(`https://www.omdbapi.com/?i=${id}&apikey=900cdde7`);
                 
                 setMovie(data); // Store the movie data in state
@@ -30,6 +32,7 @@ const MoviesInfo = () => {
 
     if (loading) {
         return <div>Loading...</div>; // Show loading message while fetching
+        
     }
 
     if (!movie) {
@@ -51,7 +54,7 @@ const MoviesInfo = () => {
             </div>
             <div className="movie__selected">
               <figure className="movie__selected--figure">
-                  <img src={movie.Poster} alt="" className='movie__selected--img' />
+                  <img src={movie.Poster} onError={(e) => e.target.src=noimage} className='movie__selected--img' />
               </figure>
               <div className="movie__selected--description">
                 <h2 className="movie__selected__title">
@@ -79,12 +82,8 @@ const MoviesInfo = () => {
                   <div className="movie__reviews">
                     <span className="bold">Reviews:</span>
                     <Ratings ratings={movie.Ratings} />
-                    {/* {movie.Ratings[0].Source}: {movie.Ratings[0].Value}<br /> */}
-                    {/* {movie.Ratings[1].Source}: {movie.Ratings[1].Value}<br />
-                    {movie.Ratings[2].Source}: {movie.Ratings[2].Value}<br /> */}
                   </div>
                 </div>
-                
               </div>
             </div>
           </div>

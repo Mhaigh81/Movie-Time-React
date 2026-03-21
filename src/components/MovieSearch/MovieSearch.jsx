@@ -17,18 +17,21 @@ const MovieSearch = () => {
   const [movies, setMovies] = useState([]) 
   const [searchTerm, setSearchTerm] = useState("")  
   const [searchParams] = useSearchParams()
+ 
 
   const searchValue = searchParams.get("search")
       
       async function getMovies(term) {
         if (!term) return
+        
         try{
           const {data} = await axios.get(`https://www.omdbapi.com/?s=${term}&apikey=900cdde7`)
         setMovies(data.Search || [])
         } catch(error) {
           console.error("Error fetching movies:", error);
           setMovies([]);
-        }
+        } 
+      
       }
 
       useEffect(() => {
@@ -37,6 +40,7 @@ const MovieSearch = () => {
           getMovies(searchValue);
         }
       }, [searchValue]);
+
 
   
   return (

@@ -6,42 +6,57 @@ import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 const MovieCard = ({ movie }) => {
   
-  const [img, setImg] = useState ()  
+  const [img, setImg] = useState (null) 
+  const [loading, setLoading] = useState(true) 
+  const noImg = noimage
   
     useEffect(() => {
     const image = new Image()
       image.src = movie.Poster
+
       image.onload = () =>{
           setTimeout(() => {
-            setImg(image)
+            setImg(image.src)
+            setLoading(false)
           }, 2000)
       }
-    })
+
+      image.onerror = () => {
+          setImg(noImg)
+          setLoading(false)
+      }
+
+      return () => {
+        setImg(null)
+        
+      }
+    }, [movie])
 
   
   return (
     <div className="movie__card">
-      {img ? (
+      {loading ? (
         <>
-          
+          <div className="movie__img--skeleton"></div>        
+          <div className="skeleton movie__title--skeleton"></div>
+        </>
+      ) : img ? (  
+        <>
           <Link to={`/FindMovies/${movie.imdbID}`} target="_blank">
             <figure>
-            <img className="movie__img" src={movie.Poster} onError={(e) => e.target.src=noimage}></img>
+            <img className="movie__img" src={img} ></img>
           </figure>
           </Link>
           <h2 className="movie__title">{movie.Title}</h2>
           <h4 className="movie__year">{movie.Year}</h4>
 
-          <Link to={`https://www.omdbapi.com/?i=${movie.imdbID}&apikey=900cdde7`}>
+         <Link to={`/FindMovies/${movie.imdbID}`} target="_blank">
             <button className="movie__btn">Learn More</button>{" "}
           </Link>
         </>
        ) : (
         <>
-         
-          <div className="movie__img--skeleton"></div>        
-          <div className="skeleton movie__title--skeleton"></div>
-         
+         <img className="movie__img" src={noImg} />         
         </>
       )} 
       
