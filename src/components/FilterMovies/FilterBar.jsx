@@ -42,9 +42,7 @@ const FilterBar = ({ term, movies, setMovies }) => {
                     </select>
                 </div>
                 
-                {/* <div className="movies movies__loading">
-                        <FontAwesomeIcon icon="spinner"className="fa-solid fa-spinner books__loading--spinner" />
-                </div> */}
+         
                 
                 
             </div>
