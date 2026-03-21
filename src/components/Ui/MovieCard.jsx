@@ -11,6 +11,15 @@ const MovieCard = ({ movie }) => {
   const noImg = noimage
   
     useEffect(() => {
+
+      if(!movie.Poster || movie.Poster === "N/A") {
+        setTimeout(() => {
+          setImg(noImg)
+        setLoading(false)
+        }, 2000);
+        return
+      }
+
     const image = new Image()
       image.src = movie.Poster
 
@@ -32,7 +41,6 @@ const MovieCard = ({ movie }) => {
       }
     }, [movie])
 
-  
   return (
     <div className="movie__card">
       {loading ? (
@@ -42,7 +50,7 @@ const MovieCard = ({ movie }) => {
         </>
       ) : img ? (  
         <>
-          <Link to={`/FindMovies/${movie.imdbID}`} target="_blank">
+          <Link to={`/FindMovies/${movie.imdbID}`}>
             <figure>
             <img className="movie__img" src={img} ></img>
           </figure>
@@ -58,7 +66,8 @@ const MovieCard = ({ movie }) => {
         <>
          <img className="movie__img" src={noImg} />         
         </>
-      )} 
+      )
+      } 
       
     </div>
   );
