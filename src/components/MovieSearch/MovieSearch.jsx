@@ -54,7 +54,7 @@ const MovieSearch = () => {
                   <input className='search__input' type="text" placeholder='Search for your movie titles here:' 
                   value={searchTerm}
                   onChange={(event) => setSearchTerm(event.target.value)} 
-                  onKeyPress={(event) => {
+                  onKeyDown={(event) => {
                     if (event.key === "Enter") {
                       getMovies(searchTerm)
                     }
