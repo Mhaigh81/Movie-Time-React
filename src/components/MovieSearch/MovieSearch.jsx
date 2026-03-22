@@ -15,7 +15,8 @@ import FilterBar from '../../components/FilterMovies/FilterBar.jsx'
 const MovieSearch = () => {
 
   const [movies, setMovies] = useState([]) 
-  const [searchTerm, setSearchTerm] = useState("")  
+  const [searchTerm, setSearchTerm] = useState("") 
+  const [inputValue, setInputValue] = useState("")
   const [searchParams] = useSearchParams()
  
 
@@ -23,7 +24,7 @@ const MovieSearch = () => {
       
       async function getMovies(term) {
         if (!term) return
-        
+        setInputValue(term)
         try{
           const {data} = await axios.get(`https://www.omdbapi.com/?s=${term}&apikey=900cdde7`)
         setMovies(data.Search || [])
@@ -53,6 +54,11 @@ const MovieSearch = () => {
                   <input className='search__input' type="text" placeholder='Search for your movie titles here:' 
                   value={searchTerm}
                   onChange={(event) => setSearchTerm(event.target.value)} 
+                  onKeyPress={(event) => {
+                    if (event.key === "Enter") {
+                      getMovies(searchTerm)
+                    }
+                  }}
                   />
                   <button className="search__btn">
                     <FontAwesomeIcon icon={faMagnifyingGlass} className='search-fa-solid' onClick={() => getMovies(searchTerm)} />
@@ -63,7 +69,7 @@ const MovieSearch = () => {
           
           <div className="overlay"></div>
         </div>
-        <FilterBar term={searchTerm} movies={movies} setMovies={setMovies}/>
+        <FilterBar term={inputValue} movies={movies} setMovies={setMovies}/>
         <SearchResults movies={movies} />
         
         
