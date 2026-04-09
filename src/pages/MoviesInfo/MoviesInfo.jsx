@@ -32,12 +32,15 @@ const MoviesInfo = () => {
     }, [id]);
 
     if (loading) {
-        return <div>Loading...</div>; // Show loading message while fetching
+        return <div className='movie__loading'>
+          <FontAwesomeIcon icon="spinner" />
+          Loading ...
+          </div>; // Show loading message while fetching
         
     }
 
     if (!movie) {
-        return <div>No movie found.</div>; // Handle case where no movie is returned
+        return <div className='no--movies'>No movies found.</div>; // Handle case where no movie is returned
     }
    
 
@@ -49,8 +52,8 @@ const MoviesInfo = () => {
         <div className="movies--row">
           <div className="movie__selected--top">
             <button onClick={() => navigate(-1)} className="movie__link">
-              <FontAwesomeIcon icon="arrow-left" /> Back To Search Results
-            </button>
+              <FontAwesomeIcon icon="arrow-left" /> 
+            </button>Back To Search Results
           </div>
           <div className="movie__selected">
             <figure className="movie__selected--figure">
@@ -61,8 +64,8 @@ const MoviesInfo = () => {
               />
             </figure>
             <div className="movie__selected--description">
-              <h2 className="movie__selected__title">{movie.Title}</h2>
-              <p className="movie__selected__plot">{movie.Plot}</p>
+              <h2 className="movie__selected--title">{movie.Title}</h2>
+              <p className="movie__selected--plot">{movie.Plot}</p>
               <h3 className="movie__selected--actors">
                 <span className="bold">Staring:</span> <br />
                 {movie.Actors}

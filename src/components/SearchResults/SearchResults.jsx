@@ -17,7 +17,7 @@ const SearchResults = ({ movies }) => {
                   <MovieCard movie={movie} key={movie.imdbID + index} />
                 ))
             ) : (
-              <p>No movies found</p>
+              <div className="no--movies">No movies found</div>
             )
             }
           </div>
