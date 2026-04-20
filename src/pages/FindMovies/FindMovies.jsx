@@ -6,10 +6,7 @@ const FindMovies = () => {
   return (
     <div className='findMovies'>
         
-        
         <MovieSearch />
-       
-        {/* <SearchResults /> */}
         
     </div>
   )
