@@ -4,12 +4,12 @@ import  '../Landing/Landing.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import mainPhoto from '../../assets/movietheater_splash.jpg'
 import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 
 const Landing = () => {
 
-    const [term, setTerm] = useState("")
-
+    
+    const [searchTerm, setSearchTerm] = useState("") 
 
   return (
    <section id="landing">
@@ -21,15 +21,10 @@ const Landing = () => {
                 <div className="landing-search">
                     <div className="landing-search__wrapper">
                         <input className="landing-search__input" type="text" placeholder='Search for your movie titles here:' 
-                        value={term} 
-                        onChange={(event) => setTerm(event.target.value)}
-                        // onKeyDown={(event) => {
-                        //     if (event.key === "Enter") {
-                        //         setTerm(event.target.value)
-                        //     }
-                        // }} 
-                        />
-                        <Link to={`/findmovies?search=${term}`}>
+                        value={searchTerm} 
+                        onChange={(event) => setSearchTerm(event.target.value)} />
+
+                        <Link to={`/findmovies?search=${searchTerm}`}>
 
                             <button className="landing-search__btn">
                                 <FontAwesomeIcon icon={faMagnifyingGlass} className='fa-solid' />

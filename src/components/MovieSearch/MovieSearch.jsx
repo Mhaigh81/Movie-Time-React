@@ -5,7 +5,7 @@ import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
 import overlayBackground from '../../assets/unsplash3.jpg' 
 import axios from 'axios'
 import './MovieSearch.css'
-// import '../SearchResults/SearchResults.css'
+
 
 import { useSearchParams } from 'react-router-dom'
 import SearchResults from '../SearchResults/SearchResults.jsx'
