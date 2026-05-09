@@ -17,7 +17,7 @@ const MovieSearch = () => {
   const [movies, setMovies] = useState([]) 
   const [searchTerm, setSearchTerm] = useState("") 
   const [inputValue, setInputValue] = useState("")
-  const [searchParams] = useSearchParams()
+  const [searchParams, setSearchParams] = useSearchParams() 
  
 
   const searchValue = searchParams.get("search")
@@ -56,12 +56,12 @@ const MovieSearch = () => {
                   onChange={(event) => setSearchTerm(event.target.value)} 
                   onKeyDown={(event) => {
                     if (event.key === "Enter") {
-                      getMovies(searchTerm)
+                      setSearchParams({ search: searchTerm})
                     }
                   }}
                   />
                   <button className="search__btn">
-                    <FontAwesomeIcon icon={faMagnifyingGlass} className='search-fa-solid' onClick={() => getMovies(searchTerm)} />
+                    <FontAwesomeIcon icon={faMagnifyingGlass} className='search-fa-solid' onClick={() => setSearchParams({ search: searchTerm})} />
                   </button>
                 </div>
               </div>

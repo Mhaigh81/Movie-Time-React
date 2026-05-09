@@ -22,8 +22,13 @@ const Landing = () => {
                     <div className="landing-search__wrapper">
                         <input className="landing-search__input" type="text" placeholder='Search for your movie titles here:' 
                         value={term} 
-                        onChange={(e) => setTerm(e.target.value)
-                        }/>
+                        onChange={(event) => setTerm(event.target.value)}
+                        // onKeyDown={(event) => {
+                        //     if (event.key === "Enter") {
+                        //         setTerm(event.target.value)
+                        //     }
+                        // }} 
+                        />
                         <Link to={`/findmovies?search=${term}`}>
 
                             <button className="landing-search__btn">
